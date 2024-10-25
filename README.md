@@ -7,7 +7,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.4.5/swiper-bundle.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.4.5/swiper-bundle.min.css">
-    <style>
+<style>
 :root {
     --primary-color: #3498db;
     --secondary-color: #2c3e50;
@@ -32,77 +32,35 @@ body {
     line-height: 1.6;
 }
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
+.container {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 10px;
+}
 
-        .header {
-            background: var(--primary-gradient);
-            padding: 20px;
-            margin-bottom: 0;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        }
+.header {
+    padding: 20px;
+    margin-bottom: 0px;
+}
 
-        .header-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
+.heading {
+    font-size: 4rem;
+    font-weight: 700;
+    text-align: center;
+    margin-top: 0px;
+    background: linear-gradient(45deg, #DA70D6, #FFC0CB);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: gradientShift 10s ease infinite;
+}
 
-        .logo-section {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-        }
-
-        .heading {
-            font-size: 3.5rem;
-            font-weight: 700;
-            background: var(--logo-gradient);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            animation: gradientShift 10s ease infinite;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
-        }
-
-        .subheading {
-            text-align: left;
-            font-size: 1.1rem;
-            color: #b69fff;
-            margin-top: 5px;
-            letter-spacing: 1px;
-        }
-
-        .connect-wallet {
-            background: var(--button-gradient);
-            color: white;
-            border: none;
-            padding: 12px 24px;
-            border-radius: 50px;
-            font-size: 1rem;
-            font-weight: 600;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(155, 77, 255, 0.3);
-        }
-
-        .connect-wallet:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(155, 77, 255, 0.4);
-            background: var(--button-hover-gradient);
-        }
-
-        .connect-wallet i {
-            font-size: 1.1rem;
-        }
+.subheading {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #57a;
+    margin-top: 5px;
+}
 
 @keyframes gradientShift {
     0%, 100% { background-position: 0% 50%; }
@@ -1280,20 +1238,12 @@ body {
 </head>
 <body>
     <main class="container">
-    <header class="header">
-        <div class="header-content">
-            <div class="logo-section">
-                <h1 class="heading">
-                    <span>N</span><span>y</span><span>s</span><span>a</span>
-                </h1>
-                <p class="subheading">Innovate. Create. Inspire.</p>
-            </div>
-            <button class="connect-wallet">
-                <i class="fas fa-wallet"></i>
-                Connect Wallet
-            </button>
-        </div>
-    </header>
+        <header class="header">
+            <h1 class="heading">
+                <span id="n">N</span><span id="y">y</span><span id="s">s</span><span id="a">a</span>
+            </h1>
+            <p class="subheading">Innovate. Create. Inspire.</p>
+        </header>
         <div class="search-container">
             <i class="fas fa-search search-icon"></i>
             <input type="text" class="search-bar" id="searchBar" placeholder="Search for cryptocurrencies, NFTs, people, or smart contracts...">

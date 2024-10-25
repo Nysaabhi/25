@@ -40,14 +40,14 @@ body {
 
 .header {
     padding: 20px;
-    margin-bottom: 20px;
+    margin-bottom: 0px;
 }
 
 .heading {
     font-size: 4rem;
     font-weight: 700;
     text-align: center;
-    margin-top: -25px;
+    margin-top: 0px;
     background: linear-gradient(45deg, #DA70D6, #FFC0CB);
     -webkit-background-clip: text;
     background-clip: text;

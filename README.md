@@ -16,7 +16,7 @@
     --border-color: #343434;
     --border-radius: 12px;
     --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-    --background-color: #232324;
+    --background-color: #fff;
 }
 
 * {

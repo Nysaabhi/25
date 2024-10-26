@@ -1235,19 +1235,18 @@ body {
     opacity: 0.7;
 }
 
-/* Add this at the beginning of your existing CSS, right after the :root block */
-.Header-link .Header-title-count-box {
+/* Hide the GitHub Pages number */
+body > h1:first-of-type:not(.heading) {
     display: none !important;
 }
 
-/* Alternative method - hide by heading text content */
-h1[data-content="25"],
-.js-permalink-shortcut {
+/* Alternative method if the above doesn't work */
+.markdown-body h1:first-child {
     display: none !important;
 }
 
-/* If the above doesn't work, this more aggressive solution will target any top-level heading with "25" */
-body > h1:first-of-type:contains("25") {
+/* If the number appears in a different container */
+.position-relative h1:first-child {
     display: none !important;
 }
 </style>

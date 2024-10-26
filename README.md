@@ -47,7 +47,7 @@ body {
     font-size: 4rem;
     font-weight: 700;
     text-align: center;
-    margin-top: 50px;
+    margin-top: 250px;
     background: #ff0073;
     -webkit-background-clip: text;
     background-clip: text;

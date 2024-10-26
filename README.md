@@ -6,16 +6,17 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.4.5/swiper-bundle.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.4.5/swiper-bundle.min.css">
-<style>
+    <style>
 :root {
     --primary-color: #3498db;
     --secondary-color: #2c3e50;
     --accent-color: #e74c3c;
-    --text-color: #ffffff;
-    --border-color: #343434;
+    --text-color: #34495e;
+    --background-dark: #0A0B0E;
+    --border-color: #e0e0e0;
+    --background-color: rgb(248, 228, 216);
     --border-radius: 12px;
-    --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-    --background-color:  #0A0B0E;
+    --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 * {
@@ -37,58 +38,28 @@ body {
     padding: 10px;
 }
 
-
 .header {
     padding: 20px;
     margin-bottom: 0px;
 }
 
-.header-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
 .heading {
-    font-size: 2.5rem;
+    font-size: 4rem;
     font-weight: 700;
-    color: #FFD700;  /* Golden color similar to Genesis */
-    letter-spacing: 2px;
-    margin: 0;
-}
-
-.connect-wallet {
-    background-color: #FFD700;
-    color: #000;
-    border: none;
-    border-radius: 25px;
-    padding: 12px 24px;
-    font-size: 1rem;
-    font-weight: 600;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    transition: all 0.3s ease;
-}
-
-.connect-wallet:hover {
-    background-color: #FFC700;
-    transform: translateY(-2px);
-}
-
-.connect-wallet i {
-    font-size: 1.1rem;
+    text-align: center;
+    margin-top: 50px;
+    background: #ff0073;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: gradientShift 10s ease infinite;
 }
 
 .subheading {
     text-align: center;
-    font-size: 1rem;
-    color: #666;
-    margin-top: 10px;
+    font-size: 1.2rem;
+    color: rgb(255, 0, 0);
+    margin-top: 5px;
 }
 
 @keyframes gradientShift {
@@ -142,7 +113,7 @@ body {
     top: calc(100% + 5px);
     left: 0;
     right: 0;
-    background-color: black;
+    background-color: white;
     border-radius: 15px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     z-index: 1000;
@@ -163,7 +134,7 @@ body {
     display: flex;
     align-items: center;
     gap: 10px;
-    border-bottom: 1px solid #000;
+    border-bottom: 1px solid #f0f0f0;
 }
 
 .suggestion-item:last-child {
@@ -171,11 +142,11 @@ body {
 }
 
 .suggestion-item:hover {
-    background-color: #a23;
+    background-color: #f8f9fa;
 }
 
 .suggestion-icon {
-    color: #000;
+    color: #666;
     font-size: 16px;
 }
 
@@ -185,8 +156,8 @@ body {
 
 .suggestion-category {
     font-size: 12px;
-    color: #000;
-    background-color: #000;
+    color: #666;
+    background-color: #f0f0f0;
     padding: 2px 8px;
     border-radius: 12px;
 }
@@ -194,7 +165,7 @@ body {
 /* Recent Searches Section */
 .recent-searches {
     padding: 10px 15px;
-    background-color: #000;
+    background-color: #f8f9fa;
     border-bottom: 1px solid #e0e0e0;
 }
 
@@ -283,7 +254,7 @@ body {
 .separator-line {
     width: 100%;
     height: 1px;
-    background-color: #e0e0e0;
+    background-color: #000;
     margin: 20px 0;
 }
 
@@ -712,7 +683,7 @@ body {
 
 .footer {
     background-color: var(--background-color);
-    color: #fff;
+    color: #000;
     padding: 20px 15px;
     position: relative;
     margin-top: auto;
@@ -784,7 +755,7 @@ body {
 }
 
 .footer-links a {
-    color: #fff;
+    color: #000;
     text-decoration: none;
     transition: color 0.3s ease, transform 0.3s ease;
     display: inline-block;
@@ -803,7 +774,7 @@ body {
 }
 
 .social-icons a {
-    color: #fff;
+    color: #000;
     font-size: 16px;
     transition: color 0.3s ease, transform 0.3s ease;
 }
@@ -821,17 +792,10 @@ body {
     font-size: 0.75em;
 }
 
-/* Responsive adjustments */
 @media (max-width: 768px) {
     .heading {
-        font-size: 2rem;
+        font-size: 2.5rem;
     }
-    
-    .connect-wallet {
-        padding: 10px 20px;
-        font-size: 0.9rem;
-    }
-}
 
     .subheading {
         font-size: 0.9rem;
@@ -1084,7 +1048,7 @@ body {
             display: flex;
             justify-content: center;
             align-items: center;
-            background-color: #ffffff;
+            background-color: transparent;
             border: none;
             border-radius: 15px;
             width: 100%;
@@ -1289,16 +1253,12 @@ body > h1:first-of-type:not(.heading) {
 </head>
 <body>
     <main class="container">
-<header class="header">
-    <div class="header-container">
-        <h1 class="heading">NYSA</h1>
-        <button class="connect-wallet">
-            <i class="fas fa-wallet"></i>
-            Connect
-        </button>
-    </div>
-    <p class="subheading">Innovate. Create. Inspire.</p>
-</header>
+        <header class="header">
+            <h1 class="heading">
+                <span id="n">N</span><span id="y">y</span><span id="s">s</span><span id="a">a</span>
+            </h1>
+            <p class="subheading">Innovate. Create. Inspire.</p>
+        </header>
         <div class="search-container">
             <i class="fas fa-search search-icon"></i>
             <input type="text" class="search-bar" id="searchBar" placeholder="Search for cryptocurrencies, NFTs, people, or smart contracts...">

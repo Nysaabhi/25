@@ -1,4 +1,3 @@
-# 25
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -1233,6 +1232,22 @@ body {
 .article-meta span:empty::after {
     content: 'N/A';
     opacity: 0.7;
+}
+
+/* Add this at the beginning of your existing CSS, right after the :root block */
+.Header-link .Header-title-count-box {
+    display: none !important;
+}
+
+/* Alternative method - hide by heading text content */
+h1[data-content="25"],
+.js-permalink-shortcut {
+    display: none !important;
+}
+
+/* If the above doesn't work, this more aggressive solution will target any top-level heading with "25" */
+body > h1:first-of-type:contains("25") {
+    display: none !important;
 }
 </style>
 </head>

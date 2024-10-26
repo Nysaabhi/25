@@ -37,28 +37,58 @@ body {
     padding: 10px;
 }
 
+
 .header {
     padding: 20px;
     margin-bottom: 0px;
 }
 
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
 .heading {
-    font-size: 4rem;
+    font-size: 2.5rem;
     font-weight: 700;
-    text-align: center;
-    margin-top: 0px;
-    background: linear-gradient(45deg, #DA70D6, #FFC0CB);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-    animation: gradientShift 10s ease infinite;
+    color: #FFD700;  /* Golden color similar to Genesis */
+    letter-spacing: 2px;
+    margin: 0;
+}
+
+.connect-wallet {
+    background-color: #FFD700;
+    color: #000;
+    border: none;
+    border-radius: 25px;
+    padding: 12px 24px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s ease;
+}
+
+.connect-wallet:hover {
+    background-color: #FFC700;
+    transform: translateY(-2px);
+}
+
+.connect-wallet i {
+    font-size: 1.1rem;
 }
 
 .subheading {
     text-align: center;
-    font-size: 1.2rem;
-    color: #57a;
-    margin-top: 5px;
+    font-size: 1rem;
+    color: #666;
+    margin-top: 10px;
 }
 
 @keyframes gradientShift {
@@ -791,10 +821,17 @@ body {
     font-size: 0.75em;
 }
 
+/* Responsive adjustments */
 @media (max-width: 768px) {
     .heading {
-        font-size: 2.5rem;
+        font-size: 2rem;
     }
+    
+    .connect-wallet {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+}
 
     .subheading {
         font-size: 0.9rem;
@@ -1252,12 +1289,16 @@ body > h1:first-of-type:not(.heading) {
 </head>
 <body>
     <main class="container">
-        <header class="header">
-            <h1 class="heading">
-                <span id="n">N</span><span id="y">y</span><span id="s">s</span><span id="a">a</span>
-            </h1>
-            <p class="subheading">Innovate. Create. Inspire.</p>
-        </header>
+<header class="header">
+    <div class="header-container">
+        <h1 class="heading">NYSA</h1>
+        <button class="connect-wallet">
+            <i class="fas fa-wallet"></i>
+            Connect
+        </button>
+    </div>
+    <p class="subheading">Innovate. Create. Inspire.</p>
+</header>
         <div class="search-container">
             <i class="fas fa-search search-icon"></i>
             <input type="text" class="search-bar" id="searchBar" placeholder="Search for cryptocurrencies, NFTs, people, or smart contracts...">

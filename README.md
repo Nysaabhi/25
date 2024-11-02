@@ -26,10 +26,18 @@
 }
 
 body {
-  font-family: 'Poppins', sans-serif;
-  background-color: var(--background-color);
-  color: var(--text-color);
-  line-height: 1.6;
+    font-family: 'Poppins', sans-serif;
+    background-color: #1a1a1f;  /* Match the footer background color */
+    color: var(--text-color);
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
+    background-color: var(--background-color);  /* Keep the main content background */
 }
 
 .container {
@@ -755,7 +763,7 @@ main.container {
     font-family: 'Inter', sans-serif;
     border-top: 2px solid #FFD700;
     width: 100vw;
-    margin: 0;
+    margin-top: auto;  /* Push footer to bottom */
     position: relative;
     left: 50%;
     right: 50%;

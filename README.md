@@ -33,7 +33,6 @@ body {
 }
 
 .container {
-    overflow-x: hidden;
     width: 100%;
     max-width: 100%;
     margin: 0;

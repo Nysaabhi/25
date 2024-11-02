@@ -33,6 +33,7 @@ body {
 }
 
 .container {
+    overflow-x: hidden;
     width: 100%;
     max-width: 100%;
     margin: 0;
@@ -754,13 +755,15 @@ main.container {
     padding: 60px 0 30px;
     font-family: 'Inter', sans-serif;
     border-top: 2px solid #FFD700;
-    width: 100%;
+    width: 100vw;
     margin: 0;
-    left: 0;
-    right: 0;
-    overflow-x: hidden;
     position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
     box-sizing: border-box;
+    overflow: hidden;
 }
 
 .footer-container {
@@ -773,6 +776,7 @@ main.container {
     gap: 40px;
     box-sizing: border-box;
 }
+
 
 .footer-brand {
     display: flex;
@@ -1435,12 +1439,23 @@ body > h1:first-of-type:not(.heading) {
     }
 }
 
-@media screen and (max-width: 968px) {
-    .footer-container {
-        grid-template-columns: 1fr 1fr;
-        gap: 30px;
+@media screen and (max-width: 768px) {
+    .footer {
+        width: 100vw;
+        padding: 40px 0 20px;
+        margin-left: -50vw;
+        margin-right: -50vw;
     }
     
+    .footer-container {
+        grid-template-columns: 1fr;
+        gap: 25px;
+        padding: 0 20px;
+        width: 100%;
+        max-width: 100%;
+    }
+}
+
     .footer-brand {
         grid-column: 1 / -1;
     }

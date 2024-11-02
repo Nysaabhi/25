@@ -26,72 +26,126 @@
 }
 
 body {
-    font-family: 'Poppins', sans-serif;
-    background-color: var(--background-color);
-    color: var(--text-color);
-    line-height: 1.6;
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  line-height: 1.6;
 }
 
 .container {
+    width: 100%;
     max-width: 100%;
-    margin: 0 auto;
+    margin: 0;
     padding: 10px;
+    box-sizing: border-box;
+}
+
+main.container {
+    padding-top: 10px; /* Adjust this value based on your header's height */
 }
 
 .header {
-    padding: 20px;
-    margin-bottom: 0px;
+    padding: 12px 20px;
+    background: #1a1a1f;  /* Dark, professional background */
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    border-bottom: 2px solid #FFD700;  /* Solid gold border */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
 }
 
-.heading {
-    font-size: 4rem;
-    font-weight: 700;
-    text-align: center;
-    margin-top: 250px;
-    background: #ff0073;
+.header-content {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-ink {
+    font-size: 1.8em;
+    font-weight: 900;
+    background: linear-gradient(135deg, #FFD700, #FDB931);  /* Royal gold gradient */
     -webkit-background-clip: text;
-    background-clip: text;
     color: transparent;
-    animation: gradientShift 10s ease infinite;
+    letter-spacing: 1.2px;
 }
 
-.subheading {
-    text-align: center;
-    font-size: 1.2rem;
-    color: rgb(255, 0, 0);
-    margin-top: 5px;
+.connect-wallet {
+    padding: 12px 24px;
+    background: linear-gradient(135deg, #FFD700, #FDB931);  /* Matching gold gradient */
+    border: 1px solid rgba(255, 215, 0, 0.3);
+    border-radius: 50px;  /* More professional, less rounded */
+    color: #000000;  /* Black text for better contrast */
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 0.95em;
+    letter-spacing: 0.5px;
 }
 
-@keyframes gradientShift {
-    0%, 100% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
+.connect-wallet:hover {
+    transform: translateY(-1px);  /* Subtle lift */
+    background: linear-gradient(135deg, #FDB931, #FFD700);  /* Reversed gradient on hover */
+    box-shadow: 0 4px 12px rgba(255, 215, 0, 0.15);
 }
 
-/* Search Container and Bar Styles */
+.connect-wallet:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 8px rgba(255, 215, 0, 0.1);
+}
+
+
 .search-container {
-    margin-bottom: 30px;
+    margin-top: 100px;
     position: relative;
-    width: 95%; /* Default for mobile */
+    width: 95%;
+    max-width: 800px;
     margin-left: auto;
     margin-right: auto;
+    z-index: 100;
+}
+
+.search-wrapper {
+    position: relative;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 24px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 215, 0, 0.2);
+}
+
+.search-wrapper:focus-within {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 48px rgba(0, 0, 0, 0.15);
+    border-color: rgba(255, 215, 0, 0.4);
 }
 
 .search-bar {
     width: 100%;
-    height: 60px;
-    padding: 15px 20px 15px 50px;
-    font-size: 16px;
-    border: 2px solid #000;
-    border-radius: 50px;
-    box-shadow: var(--box-shadow);
+    height: 68px;
+    padding: 12px 60px;
+    font-size: 18px;
+    color: #000000;
+    background: transparent;
+    border: 2px solid #000000;
+     border-radius: 24px;
     transition: all 0.3s ease;
-    background-color: white;
+    font-family: 'Poppins', sans-serif;
+    letter-spacing: 0.3px;
 }
 
 .search-bar:focus {
     outline: none;
-    border-color: var(--primary-color);
-    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
+}
+
+.search-bar::placeholder {
+    color: #090202;
+    font-weight: 400;
 }
 
 .search-icon {
@@ -99,12 +153,14 @@ body {
     left: 20px;
     top: 50%;
     transform: translateY(-50%);
-    color: #999;
-    transition: color 0.3s ease;
+    color: hsl(51, 51%, 23%);
+    font-size: 24px;
+    transition: all 0.3s ease;
 }
 
-.search-bar:focus + .search-icon {
-    color: var(--primary-color);
+.search-wrapper:focus-within .search-icon {
+    color: #FDB931;
+    transform: translateY(-50%) scale(1.1);
 }
 
 /* Search Suggestions Styles */
@@ -113,7 +169,7 @@ body {
     top: calc(100% + 5px);
     left: 0;
     right: 0;
-    background-color: white;
+    background-color: rgb(255, 255, 255);
     border-radius: 15px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     z-index: 1000;
@@ -129,7 +185,7 @@ body {
 
 .suggestion-item {
     padding: 12px 20px;
-    cursor: pointer;
+    cursor: po11111inter;
     transition: background-color 0.2s ease;
     display: flex;
     align-items: center;
@@ -199,7 +255,6 @@ body {
     border-color: #ccc;
 }
 
-/* Filter Container Styles */
 .filter-container {
     display: flex;
     justify-content: flex-start;
@@ -209,9 +264,16 @@ body {
     -webkit-overflow-scrolling: touch;
     scrollbar-width: none;
     -ms-overflow-style: none;
-    padding: 24px 0;
-    margin-bottom: 16px;
+    padding: 24px 20px 24px 40px; /* Added left padding of 40px */
+    margin-top: 20px;
     gap: 0px;
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    background-color: var(--background-color);
 }
 
 .filter-container::-webkit-scrollbar {
@@ -252,10 +314,15 @@ body {
 }
 
 .separator-line {
-    width: 100%;
+    width: 100vw;
     height: 1px;
-    background-color: #000;
+    background-color: #343333;
     margin: 20px 0;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
 }
 
 #cardsContainer {
@@ -682,56 +749,131 @@ body {
 }
 
 .footer {
-    background-color: var(--background-color);
-    color: #000;
-    padding: 20px 15px;
+    background: #1a1a1f;
+    color: #fff;
+    padding: 60px 0 30px;
+    font-family: 'Inter', sans-serif;
+    border-top: 2px solid #FFD700;
+    width: 100vw;
+    max-width: 100%;
+    overflow: hidden;
     position: relative;
-    margin-top: auto;
+    box-sizing: border-box;
 }
 
-.footer::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 4px;
-    background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
-}
-
+/* Container improvements */
 .footer-container {
     max-width: 1200px;
+    width: 100%;
     margin: 0 auto;
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1fr;
+    gap: 40px;
+    box-sizing: border-box;
+}
+
+.footer-brand {
     display: flex;
+    flex-direction: column;
+    gap: 24px;
+    max-width: 100%;
+}
+
+.footer-logo-section {
+    display: flex;
+    align-items: center;
+    gap: 15px;
     flex-wrap: wrap;
-    justify-content: space-between;
 }
 
-.footer-column {
-    flex: 1;
-    min-width: 200px;
+.footer-ink {
+    font-size: 2em;
+    font-weight: 800;
+    background: linear-gradient(135deg, #FFD700, #FDB931);
+    -webkit-background-clip: text;
+    color: transparent;
+    font-family: 'Poppins', sans-serif;
+}
+
+.footer-description {
+    color: #9ca3af;
+    line-height: 1.6;
+    font-size: 0.95em;
+    margin: 15px 0;
+}
+
+.donation-section {
+    background: rgba(255, 215, 0, 0.1);
+    border-radius: 12px;
+    padding: 20px;
+    margin: 20px 0;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.donation-title {
+    font-size: 1.1em;
+    color: #FFD700;
     margin-bottom: 15px;
-    padding: 0 10px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
 }
 
-.footer-logo {
-    max-width: 120px;
-    margin: 0 0 10px;
-    transition: transform 0.3s ease;
+.wallet-address {
+    width: 100%;
+    overflow: hidden;
+    box-sizing: border-box;
 }
 
-.footer-logo:hover {
-    transform: scale(1.05);
+.address-text {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 0.85em;
+    color: #FFD700;
+    word-break: break-all;
+}
+
+.copy-button {
+    background: none;
+    border: none;
+    color: #FFD700;
+    cursor: pointer;
+    padding: 5px;
+    transition: transform 0.2s ease;
+}
+
+.copy-button:hover {
+    transform: scale(1.1);
+}
+
+.donate-button {
+    background: linear-gradient(135deg, #FFD700, #FDB931);
+    color: #000;
+    padding: 12px 24px;
+    border-radius: 25px;
+    border: none;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 15px;
+}
+
+.donate-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(255, 215, 0, 0.2);
 }
 
 .footer-column h3 {
-    margin: 0 0 8px;
-    font-size: 1em;
+    color: #FFD700;
+    font-size: 1.1em;
     font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 1px;
+    margin-bottom: 20px;
     position: relative;
-    padding-bottom: 5px;
+    padding-bottom: 10px;
 }
 
 .footer-column h3::after {
@@ -739,58 +881,60 @@ body {
     position: absolute;
     left: 0;
     bottom: 0;
-    width: 30px;
+    width: 40px;
     height: 2px;
-    background-color: var(--secondary-color);
+    background: linear-gradient(135deg, #FFD700, #FDB931);
 }
 
 .footer-links {
     list-style: none;
     padding: 0;
-    margin: 0;
-}
-
-.footer-links li {
-    margin-bottom: 6px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
 }
 
 .footer-links a {
-    color: #000;
+    color: #9ca3af;
     text-decoration: none;
-    transition: color 0.3s ease, transform 0.3s ease;
-    display: inline-block;
-    font-size: 0.85em;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.95em;
 }
 
 .footer-links a:hover {
-    color: var(--primary-color);
-    transform: translateX(3px);
+    color: #FFD700;
+    transform: translateX(5px);
 }
 
 .social-icons {
     display: flex;
-    gap: 12px;
-    margin-top: 15px;
+    gap: 15px;
+    margin-top: 20px;
 }
 
 .social-icons a {
-    color: #000;
-    font-size: 16px;
-    transition: color 0.3s ease, transform 0.3s ease;
+    color: #9ca3af;
+    font-size: 1.2em;
+    transition: all 0.3s ease;
 }
 
 .social-icons a:hover {
-    color: var(--primary-color);
-    transform: scale(1.15);
+    color: #FFD700;
+    transform: translateY(-3px);
 }
 
 .copyright {
     text-align: center;
-    padding-top: 15px;
-    margin-top: 15px;
-    border-top: 1px solid var(--border-color);
-    font-size: 0.75em;
+    padding-top: 30px;
+    margin-top: 30px;
+    border-top: 1px solid rgba(255, 215, 0, 0.1);
+    color: #9ca3af;
+    font-size: 0.9em;
 }
+
 
 @media (max-width: 768px) {
     .heading {
@@ -1074,7 +1218,7 @@ body {
             }
         }
 
-/* Article Header and Meta Styles */
+        /* Article Header and Meta Styles */
 .card-header .article-meta {
     display: flex;
     align-items: center;
@@ -1249,17 +1393,133 @@ body > h1:first-of-type:not(.heading) {
 .position-relative h1:first-child {
     display: none !important;
 }
+
+@media (max-width: 768px) {
+    .filter-container {
+        padding: 5px 0 5px 14px; /* Smaller padding on mobile */
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .filter-container {
+        padding: 24px 20px 24px 30px; /* Medium padding on tablets */
+    }
+}
+
+@media (min-width: 1025px) {
+    .filter-container {
+        padding: 24px 20px 24px 40px; /* Full padding on desktop */
+    }
+}
+
+@media (max-width: 768px) {
+    .ad-carousel-container {
+        padding: 15px 20px;
+    }
+    
+    .ad-container {
+        height: 180px;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .ad-carousel-container {
+        padding: 20px 30px;
+    }
+}
+
+@media (min-width: 1025px) {
+    .ad-carousel-container {
+        padding: 20px 40px;
+    }
+}
+
+@media (max-width: 992px) {
+    .footer-container {
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
+    }
+    
+    .footer-brand {
+        grid-column: 1 / -1;
+    }
+
+    .footer-description {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 576px) {
+    .footer {
+        padding: 40px 0 20px;
+    }
+
+    .footer-container {
+        grid-template-columns: 1fr;
+        gap: 25px;
+        padding: 0 15px;
+    }
+    
+    .footer-brand {
+        padding: 0;
+    }
+    
+    .footer-logo-section {
+        justify-content: center;
+    }
+    
+    .footer-description {
+        text-align: center;
+    }
+    
+    .social-icons {
+        justify-content: center;
+    }
+    
+    .footer-column {
+        text-align: center;
+    }
+    
+    .footer-column h3::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    
+    .footer-links {
+        align-items: center;
+    }
+
+    .footer-links a {
+        justify-content: center;
+    }
+
+    .donation-section {
+        padding: 15px;
+    }
+
+    .wallet-address {
+        padding: 10px;
+    }
+
+    .address-text {
+        font-size: 0.75em;
+    }
+}
+
 </style>
 </head>
 <body>
     <main class="container">
         <header class="header">
-            <h1 class="heading">
-                <span id="n">N</span><span id="y">y</span><span id="s">s</span><span id="a">a</span>
-            </h1>
-            <p class="subheading">Innovate. Create. Inspire.</p>
+            <div class="header-content">
+                <div class="header-ink">Nysa</div>
+                <button class="connect-wallet">
+                    <i class="fas fa-wallet"></i>
+                    Connect
+                </button>
+            </div>
         </header>
-        <div class="search-container">
+                                    <div class="search-container">
             <i class="fas fa-search search-icon"></i>
             <input type="text" class="search-bar" id="searchBar" placeholder="Search for cryptocurrencies, NFTs, people, or smart contracts...">
             <div class="search-suggestions" id="searchSuggestions"></div>
@@ -1290,8 +1550,8 @@ body > h1:first-of-type:not(.heading) {
             <button class="filter-btn" data-filter="crypto-exchanges" style="background-color: #E76F51;"><i class="fas fa-exchange-alt"></i> Crypto Exchanges</button>
             <button class="filter-btn" data-filter="article" style="background-color: #2A9D8F;"><i class="fas fa-newspaper"></i> Articles</button>
             <button class="filter-btn" data-filter="e-books" style="background-color: #264653;"><i class="fas fa-book"></i> E-Books</button>
-            <button class="filter-btn" data-filter="charity-projects" style="background-color: #F4A261;"><i class="fas fa-hands-helping"></i> Charity Projects</button>
-            <button class="filter-btn" data-filter="p2p-games" style="background-color: #E76F51;"><i class="fas fa-gamepad"></i> P2P Games</button>
+            <button class="filter-btn" data-filter="charity-projects" style="background-color: #F4A261;"><i class="fas fa-hands-helping"></i> Charity</button>
+            <button class="filter-btn" data-filter="p2p-games" style="background-color: #E76F51;"><i class="fas fa-gamepad"></i> P2E Games</button>
             <button class="filter-btn" data-filter="virtual-reality" style="background-color: #2A9D8F;"><i class="fas fa-vr-cardboard"></i> Virtual Reality</button>
             <button class="filter-btn" data-filter="lottery-tickets" style="background-color: #E9C46A;"><i class="fas fa-ticket-alt"></i> Lottery Tickets</button>
             <button class="filter-btn" data-filter="merchants" style="background-color: #F4A261;"><i class="fas fa-store"></i> Merchants</button>
@@ -1302,7 +1562,7 @@ body > h1:first-of-type:not(.heading) {
             <button class="filter-btn" data-filter="bonds" style="background-color: #E9C46A;"><i class="fas fa-lock"></i> Crypto Bonds</button>
             <button class="filter-btn" data-filter="tournaments" style="background-color: #F4A261;"><i class="fas fa-trophy"></i> Tournaments</button>
             <button class="filter-btn" data-filter="tourism" style="background-color: #E9C46A;"><i class="fas fa-suitcase-rolling"></i> Tourism</button>
-            <button class="filter-btn" data-filter="web3-business-directory" style="background-color: #2A9D8F;"><i class="fas fa-address-book"></i> Web3 Business Directory</button>
+            <button class="filter-btn" data-filter="web3-business-directory" style="background-color: #2A9D8F;"><i class="fas fa-address-book"></i> Business Directory</button>
             <button class="filter-btn" data-filter="defi-protocols" style="background-color: #264653;"><i class="fas fa-network-wired"></i> DeFi Protocols</button>
                     </div>
             <div class="separator-line"></div>
@@ -1322,46 +1582,78 @@ body > h1:first-of-type:not(.heading) {
 
     <footer class="footer">
         <div class="footer-container">
-            <div class="footer-column">
-                <img src="https://i.ibb.co/prDX9VY/new-custom-qr-code.png" alt="Nysa Logo" class="footer-logo">
-                <p>Explore, Create, Connect Unlock Infinite Possibilities with Nysa</p>
+            <div class="footer-brand">
+                <div class="footer-logo-section">
+                    <div class="footer-ink">Nysa</div>
+                    <img src="https://i.ibb.co/prDX9VY/new-custom-qr-code.png" alt="Nysa QR Code" width="80" height="80">
+                </div>
+                <p class="footer-description">Explore, Create, Connect - Unlock Infinite Possibilities with Nysa. Join our community and be part of the future of decentralized technologies.</p>
+                
+                <div class="donation-section">
+                    <h3 class="donation-title">
+                        <i class="fab fa-bitcoin"></i>
+                        Support Our Project
+                    </h3>
+                    <div class="wallet-address">
+                        <span class="address-text">bc1qxy2kgdygjrsqtzq2n0yrf2493p83kkfjhx0wlh</span>
+                        <button class="copy-button" onclick="copyToClipboard()">
+                            <i class="fas fa-copy"></i>
+                        </button>
+                    </div>
+                    <button class="donate-button">
+                        <i class="fas fa-heart"></i>
+                        Donate Now
+                    </button>
+                </div>
+    
                 <div class="social-icons">
-                    <a href="#"><i class="fab fa-facebook"></i></a>
                     <a href="#"><i class="fab fa-twitter"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-linkedin"></i></a>
-                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="#"><i class="fab fa-discord"></i></a>
+                    <a href="#"><i class="fab fa-github"></i></a>
+                    <a href="#"><i class="fab fa-telegram"></i></a>
+                    <a href="#"><i class="fab fa-medium"></i></a>
                 </div>
             </div>
-            
-            <div class="footer-column links">
+    
+            <div class="footer-column">
                 <h3>Quick Links</h3>
                 <ul class="footer-links">
-                    <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSdVv1_mOUJwPjxlCKHccxyS2KyCxxBW2f1PnA5PcXopOToz-A/viewform?usp=sf_link">About Us</a></li>
-                    <li><a href="#">Contact Us</a></li>
-                    <li><a href="#">Privacy Policy</a></li>
-                    <li><a href="#">Terms & Conditions</a></li>
-                    <li><a href="mailto:info@nysa.com">Email Us</a></li>
+                    <li><a href="#"><i class="fas fa-info-circle"></i> About Us</a></li>
+                    <li><a href="#"><i class="fas fa-envelope"></i> Contact</a></li>
+                    <li><a href="#"><i class="fas fa-shield-alt"></i> Privacy Policy</a></li>
+                    <li><a href="#"><i class="fas fa-file-contract"></i> Terms of Service</a></li>
+                    <li><a href="#"><i class="fas fa-question-circle"></i> FAQ</a></li>
                 </ul>
             </div>
-            
-            <div class="footer-column links">
+    
+            <div class="footer-column">
                 <h3>Resources</h3>
                 <ul class="footer-links">
-                    <li><a href="#">Blog</a></li>
-                    <li><a href="#">Tutorials</a></li>
-                    <li><a href="#">FAQ</a></li>
-                    <li><a href="#">Support</a></li>
-                    <li><a href="#">API Documentation</a></li>
+                    <li><a href="#"><i class="fas fa-blog"></i> Blog</a></li>
+                    <li><a href="#"><i class="fas fa-book"></i> Documentation</a></li>
+                    <li><a href="#"><i class="fas fa-graduation-cap"></i> Tutorials</a></li>
+                    <li><a href="#"><i class="fas fa-code"></i> API</a></li>
+                    <li><a href="#"><i class="fas fa-headset"></i> Support</a></li>
+                </ul>
+            </div>
+    
+            <div class="footer-column">
+                <h3>Community</h3>
+                <ul class="footer-links">
+                    <li><a href="#"><i class="fas fa-users"></i> Forum</a></li>
+                    <li><a href="#"><i class="fas fa-newspaper"></i> Newsletter</a></li>
+                    <li><a href="#"><i class="fas fa-hands-helping"></i> Partners</a></li>
+                    <li><a href="#"><i class="fas fa-bullhorn"></i> Announcements</a></li>
+                    <li><a href="#"><i class="fas fa-road"></i> Roadmap</a></li>
                 </ul>
             </div>
         </div>
-        
+    
         <div class="copyright">
             &copy; 2024 Nysa Search Engine. All rights reserved.
         </div>
     </footer>
-
+    
 <script>
 document.addEventListener('DOMContentLoaded', function() {
     const cardsContainer = document.getElementById('cardsContainer');

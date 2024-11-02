@@ -754,14 +754,15 @@ main.container {
     padding: 60px 0 30px;
     font-family: 'Inter', sans-serif;
     border-top: 2px solid #FFD700;
-    width: 100vw;
-    max-width: 100%;
-    overflow: hidden;
+    width: 100%;
+    margin: 0;
+    left: 0;
+    right: 0;
+    overflow-x: hidden;
     position: relative;
     box-sizing: border-box;
 }
 
-/* Container improvements */
 .footer-container {
     max-width: 1200px;
     width: 100%;
@@ -1434,7 +1435,7 @@ body > h1:first-of-type:not(.heading) {
     }
 }
 
-@media (max-width: 992px) {
+@media screen and (max-width: 968px) {
     .footer-container {
         grid-template-columns: 1fr 1fr;
         gap: 30px;
@@ -1449,10 +1450,17 @@ body > h1:first-of-type:not(.heading) {
     }
 }
 
-@media (max-width: 576px) {
-    .footer {
-        padding: 40px 0 20px;
+@media screen and (max-width: 576px) {
+    .footer-container {
+        grid-template-columns: 1fr;
+        gap: 30px;
     }
+}
+
+/* Ensure content doesn't overflow */
+.footer * {
+    max-width: 100%;
+}
 
     .footer-container {
         grid-template-columns: 1fr;

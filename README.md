@@ -867,7 +867,7 @@ body > h1:first-of-type:not(.heading) {
     <script>
 // Configuration and Data
 const categories = [
-    { id: 'home', name: 'Home Services', icon: 'fa-home', 
+    { id: 'home', name: 'Home', icon: 'fa-home', 
       services: ['Plumbing', 'Electrical', 'Carpentry', 'Painting', 'Appliance Repair', 'AC/Heating Repair', 'Cleaning Services'] },
       { id: 'education', name: 'Education', icon: 'fa-graduation-cap',
       services: ['Haircut', 'Manicure', 'Pedicure', 'Massage', 'Facial'] },
